@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Welcome to the admin page</a>
+        <a href="/adminorders/" class="nav-item">All Orders(Admin)</a>
+        <!-- <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+        <a href="/adminlogout/" class="btn" id="logout-btn">Logout</a>
+      </nav>
+    <div class="outer-container">
+        <div class="inner-container">
+            <form class="add-order-form" action="/addhamburger/" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                <div class="container inner-order-form">
+                    <input class="form-control" type="text" name="hamburger" placeholder="Name of Order">
+                    <input class="form-control price-input" type="text" name="price" placeholder="Price">
+                    <input class="btn order-add-btn" type="submit" value="Add" >
+                </div>
+                <!-- <input type="file" name="image"> -->
+                
+
+            </form>
+
+            <div class="container table-div">
+                <table class="hamburger-table">
+                    <tr class="tablerow-head">
+                        <th><h5>Hamburger</h5></th>
+                        <th><h5>Price</h5></th>
+                        <th><h5>Action</h5></th>
+                    </tr>
+                    {%for hamburger in hamburgers%}
+                    <tr>
+                        <td>{{hamburger.name}}</td>
+                        <td>{{hamburger.price}}</td>
+                        <td><a href="/deletehamburger/{{hamburger.id}}" class="btn delete-btn">X</a></td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

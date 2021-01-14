@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <nav class="navbar navbar-light ">
+        <a class="navbar-brand">Welcome {{this_user.username}}</a>
+        <a href="/customer/customerorders/" class="nav-item">My Orders</a>
+        <a href="/customer/logout" class="btn" id="logout-btn">Logout</a>
+    </nav>
+    {%for message in messages%}
+    <p class="success-p">{{message}}</p>
+    {%endfor%}
+    <div class="outer-container">
+        
+        <div class="main-container">
+            <form action="/placeorder/" method="POST">
+                {%csrf_token%}
+                <div class="container table-div">
+                    <table class="hamburger-table">
+                        <tr class="tablerow-head">
+                            <th><h5>Hamburger</h5></th>
+                            <th><h5>Price</h5></th>
+                            <td><h5>Quantity</h5></td>
+                        </tr>
+                        {%for hamburger in hamburgers%}
+                        <tr>
+                            <td>{{hamburger.name}}</td>
+                            <td>{{hamburger.price}}</td>
+                            <td>
+                                <input type="number" min="0" value="0" name="{{hamburger.id}}" >
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            
+                <div class="address-container">
+                    <input type="text" name="address" placeholder="address">
+                    <input class="btn cyan-btn btn-sm" type="submit" value="Order">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>
+
+

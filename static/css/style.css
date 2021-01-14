@@ -1,0 +1,238 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #CFEDD1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.outer-container{
+    padding: 25px;
+    text-align: center;
+}
+
+.form-group{
+    width: 300px;
+    display: block;
+    margin: auto;
+    background-color: #FF2768;
+    padding: 10px;
+    border: 3px solid #4E1A3E;
+    border-radius: 11px;
+}
+
+.form-group input{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    width: 80%;
+    border: 2px solid #4E1A3E;
+}
+
+.form-group h2{
+    color: white;
+    text-align: center;
+}
+
+#submit-button{
+    width: 30%;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #05E1E8;
+    color: #4E1A3E;
+}
+
+.error-spot{
+    text-align: center;
+    color: red;
+}
+
+#logout-btn{
+    background-color: #05E1E8;
+    color: #4E1A3E;
+}
+
+/*ADMINHOMEPAGE*/
+.add-order-form{
+
+}
+
+.inner-order-form{
+    width: 350px;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+
+.add-order-form input{
+    /* width: 200px; */
+    
+    margin: auto;
+    margin-left: 15px;
+}
+
+.order-add-btn{
+    text-align: center;
+    
+    background-color: #FF2768;
+    color: white;
+}
+
+.price-input{
+    width: 35%;
+}
+
+.table-div{
+    /* width: 50%; */
+    /* display: block; */
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.table-div table{
+    border-top: 1px solid #4E1A3E;
+    border-bottom: 1px solid #4E1A3E;
+    border-collapse: collapse;
+    background-color: #03E2EA;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    color: #4E1A3E;
+    
+}
+
+.table-div table td{
+    padding: 7px 0;
+    text-align: center;
+    border-left: 1px solid #4E1A3E;
+    border-right: 1px solid #4E1A3E;
+    border-bottom: 1px solid #4E1A3E;
+}
+
+.table-div table a{
+    color: white;
+    text-decoration: none;
+    width: 37px;
+
+}
+
+.delete-btn{
+    background-color: #FF2768;
+}
+
+/*custonmer homepage*/
+.inner-container{
+    position: relative;
+    background-image: url();
+    height: 1000px;
+    background-size: cover;
+}
+
+.small-container{
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    right: 0px;
+    background-color: #05E1E8;
+    padding: 10px 30px 30px 30px;
+    border: 3px solid #4E1A3E;
+    border-radius: 11px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.small-container h2{
+    text-align: center;
+    color: white;
+}
+
+.small-container input{
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid #4E1A3E;
+    border-radius: 11px;
+}
+
+.userlogin-btn{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #FF2768;
+    color: white;
+}
+
+.navbar{
+    border-bottom: 3px solid #4E1A3E ;
+    background-color: #CFEDD1;
+}
+
+/*customer main page*/
+.tablerow-head{
+    background-color: #FF2768;
+    color: white;
+}
+
+.hamburger-table input{
+    width: 50px;
+    padding: 2px;
+}
+
+.cyan-btn{
+    background-color: #05E1E8;
+    color: white;
+    border: 2px solid #4E1A3E;
+}
+
+.red-btn{
+    background-color:  #FF2768;
+    color: white;
+    border: 2px solid #4E1A3E;
+}
+
+.address-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.address-container input{
+    padding: 3px;
+}
+
+.success-p{
+    color: green;
+    text-align: center;
+}
+
+.nav-item{
+    color: #4E1A3E;
+}
+
+/*CUSTOMER ORDER PAGE*/
+.outer-container2{
+    padding: 20px;
+}
+
+.alert{
+    padding: 20px;
+    background-color: white;
+}
+
+.your-orders h2{
+    text-align: center;
+    background-color: green;
+    padding: 5px;
+}
+
+
+span{
+    font-weight: bolder;
+    font-size: 1.15rem;
+    color: #4E1A3E;
+}

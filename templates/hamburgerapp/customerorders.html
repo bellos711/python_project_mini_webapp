@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <nav class="navbar navbar-light ">
+        <a class="navbar-brand">Welcome {{this_customer.username}}</a>
+        <a href="/customer/main" class="nav-item">Orders Section</a>
+        <a href="/customer/logout" class="btn" id="logout-btn">Logout</a>
+    </nav>
+    
+    
+    <div class="outer-container2">
+        <h2 class="your-orders">Your Orders</h2>
+        {%for order in all_customer_orders%}
+        <div class="alert alert-warning" role="alert">
+            
+            <p style="visibility: hidden;">{{order.id}}</p>
+            <p><span>Order Date:</span> {{order.created_at}}</p>
+            <p><span>Phone:</span> {{this_customer_phone}}</p>
+            <p><span>Order Details:</span> {{order.ordered_items}}</p>
+            <p><span>Address:</span> {{order.address}}</p>
+            <p><span>Order Status:</span> {{order.status}}</p>
+        </div>
+        {%endfor%}
+        <div class="main-container">
+            
+        </div>
+        
+    </div>
+</body>
+</html>
+
+
